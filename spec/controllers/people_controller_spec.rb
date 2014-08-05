@@ -23,8 +23,9 @@ RSpec.describe PeopleController, :type => :controller do
   # This should return the minimal set of attributes required to create a valid
   # Person. As you add validations to Person, be sure to
   # adjust the attributes here as well.
+
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {first_name: "John", last_name: "Doe"}
   }
 
   let(:invalid_attributes) {
