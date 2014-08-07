@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :companies
+
   root 'people#index'
   resources :email_addresses
   resources :phone_numbers
