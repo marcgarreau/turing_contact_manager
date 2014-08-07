@@ -11,6 +11,11 @@ RSpec.describe PhoneNumber, :type => :model do
   	phone_number.number = nil
   	expect(phone_number).to_not be_valid
   end
+
+  it 'is invalid without a contact id' do
+    phone_number.contact_id = nil
+    expect(phone_number).to_not be_valid
+  end
   
   it 'is associated with a contact' do
   	expect(phone_number).to respond_to(:contact)
