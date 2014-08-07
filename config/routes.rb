@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
+  root 'people#index'
   resources :email_addresses
-
   resources :phone_numbers
-
   resources :people
 
   # The priority is based upon order of creation: first created -> highest priority.

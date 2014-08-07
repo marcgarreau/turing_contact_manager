@@ -86,8 +86,6 @@ RSpec.describe PhoneNumbersController, :type => :controller do
       end
 
       it "redirects to the created phone_number" do
-        alice = Person.create(first_name: 'Alice', last_name: 'Smith')
-        valid_attributes = {number: '555-8888', person_id: alice.id}
         post :create, {:phone_number => valid_attributes}, valid_session
         expect(response).to redirect_to(alice)
       end
@@ -161,7 +159,7 @@ RSpec.describe PhoneNumbersController, :type => :controller do
     it "redirects to the phone_numbers list" do
       phone_number = PhoneNumber.create! valid_attributes
       delete :destroy, {:id => phone_number.to_param}, valid_session
-      expect(response).to redirect_to(bob)
+    expect(response).to redirect_to(bob)
     end
   end
 
