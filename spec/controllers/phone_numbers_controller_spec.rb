@@ -24,7 +24,7 @@ RSpec.describe PhoneNumbersController, :type => :controller do
   # PhoneNumber. As you add validations to PhoneNumber, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { number: "MyString", person_id: 1 }
+    { number: "MyString", contact_id: 1 }
   }
 
   let(:invalid_attributes) {
