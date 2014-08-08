@@ -2,20 +2,14 @@ require 'rails_helper'
 
 RSpec.describe EmailAddressesController, :type => :controller do
 
-  # This should return the minimal set of attributes required to create a valid
-  # EmailAddress. As you add validations to EmailAddress, be sure to
-  # adjust the attributes here as well.
   let(:valid_attributes) {
-    { address: "abc@example.com", person_id: 1}
+    { address: "abc@example.com", contact_id: 1, contact_type: 'Person'}
   }
 
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
   }
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # EmailAddressesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET index" do
@@ -52,7 +46,7 @@ RSpec.describe EmailAddressesController, :type => :controller do
   describe "POST create" do
     describe "with valid params" do
       let(:joe) { Person.create(first_name: 'Joe', last_name: 'Dirt') }
-      let(:valid_attributes) { { address: 'me@example.com', person_id: joe.id } }
+      let(:valid_attributes) { { address: 'me@example.com', contact_id: joe.id, contact_type: 'Person' } }
       
       
       it "creates a new EmailAddress" do
@@ -89,8 +83,8 @@ RSpec.describe EmailAddressesController, :type => :controller do
   describe "PUT update" do
     describe "with valid params" do
       let(:joe) { Person.create(first_name: 'Joe', last_name: 'Dirt') }
-      let(:valid_attributes) { { address: 'me@example.com', person_id: joe.id } }
-      let(:new_attributes) { {address: 'm@example.com', person_id: joe.id} }
+      let(:valid_attributes) { { address: 'me@example.com', contact_id: joe.id, contact_type: 'Person' } }
+      let(:new_attributes) { {address: 'm@example.com', contact_id: joe.id, contact_type: 'Person'} }
 
       it "updates the requested email_address" do
         email_address = EmailAddress.create! valid_attributes

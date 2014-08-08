@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe EmailAddress, :type => :model do
 	let(:email_address) do
-		EmailAddress.new(address: 'abc@example.com', person_id: 1)
+		EmailAddress.new(address: 'abc@example.com', contact_id: 1, contact_type: 'Person')
 	end
 
 	it 'is valid' do
@@ -15,6 +15,6 @@ RSpec.describe EmailAddress, :type => :model do
 	end
 
 	it 'is associated with a person' do
-		expect(email_address).to respond_to(:person)
+		expect(email_address).to respond_to(:contact)
 	end
 end
